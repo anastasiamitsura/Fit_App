@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Fit_App/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Fit_App/app/src/main/res/layout/activity_regist.xml" value="0.264" />
         <entry key="..\:/Fit_App/app/src/main/res/layout/activity_regist2.xml" value="0.264" />
+        <entry key="..\:/Fit_App/app/src/main/res/layout/fragment_home_sc.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fit_App/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fit_App/app/src/main/res/layout/fragment_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/Fit_App/app/src/main/res/layout/main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fit_App/app/src/main/res/menu/menu_toolbar.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>
