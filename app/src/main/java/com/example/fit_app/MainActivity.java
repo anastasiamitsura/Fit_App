@@ -5,28 +5,65 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.fit_app.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    BottomNavigationView bottomNavigationView;
 
     private ActivityMainBinding binding;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.container, new HomeSc())
+                .commit();
+    }
 
-
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homebt, R.id.settingbt, R.id.profilebt)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navV, navController);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.homebt:
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.container, new HomeSc())
+                        .commit();
+                return true;
+            case R.id.settingbt:
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.container, new SettingFr())
+                        .commit();
+                return true;
+            case R.id.profilebt:
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.container, new ProfileFr())
+                        .commit();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
+

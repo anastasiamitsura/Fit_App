@@ -45,6 +45,18 @@
                 android:layout_gravity="end"
                 android:src="@drawable/ic_baseline_add_24"
                 android:layout_margin="10dp"/>
+            <TextView
+                android:id="@+id/txt_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rdter"
+                android:textSize="30dp"/>
+            <TextView
+                android:id="@+id/txt_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ftyjdj"
+                android:textSize="30dp"/>
 
 
         </LinearLayout>
