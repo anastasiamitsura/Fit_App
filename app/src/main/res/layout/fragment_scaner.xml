@@ -9,13 +9,14 @@
     <SurfaceView
         android:id="@+id/scanview"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/scantxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Plese scan cod"
+        android:text="Please scan QR cod"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:layout_margin="10dp"
         android:layout_gravity="center" />

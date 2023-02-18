@@ -15,9 +15,5 @@
         android:id="@+id/profilebt"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile" />
-    <item
-        android:id="@+id/skanbt"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="Skan" />
 
 </menu>

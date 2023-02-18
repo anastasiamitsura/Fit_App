@@ -29,6 +29,7 @@ import java.io.IOException;
 public class ScanerFragment extends Fragment {
 
     private FragmentScanerBinding binding;
+    public static String name = "";
 
     CameraSource cameraSource;
     BarcodeDetector barcodeDetector;
@@ -43,7 +44,7 @@ public class ScanerFragment extends Fragment {
 
         barcodeDetector = new BarcodeDetector.Builder(requireContext()).setBarcodeFormats(Barcode.ALL_FORMATS).build();
 
-        cameraSource = new CameraSource.Builder(requireContext(), barcodeDetector).setRequestedPreviewSize(640, 480).build();
+        cameraSource = new CameraSource.Builder(requireContext(), barcodeDetector).setRequestedPreviewSize(640, 480).setAutoFocusEnabled(true).build();
 
         binding.scanview.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
@@ -86,7 +87,14 @@ public class ScanerFragment extends Fragment {
                     binding.scantxt.post(new Runnable() {
                         @Override
                         public void run() {
-                            binding.scantxt.setText(qrCodes.valueAt(0).displayValue);
+                            name = qrCodes.valueAt(0).displayValue;
+                            if(name.equals("шоколад милка") || name.equals("молоко простоквашино") || name.equals("сырок чудо")){
+                                binding.scantxt.setText(name);
+                                getParentFragmentManager().
+                                        beginTransaction().
+                                        replace(R.id.container, new HomeSc())
+                                        .commit();
+                            }
                         }
                     });
                 }

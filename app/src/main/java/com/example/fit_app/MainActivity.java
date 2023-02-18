@@ -61,12 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         replace(R.id.container, new ProfileFr())
                         .commit();
                 return true;
-            case R.id.skanbt:
-                getSupportFragmentManager().
-                        beginTransaction().
-                        replace(R.id.container, new ScanerFragment())
-                        .commit();
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
