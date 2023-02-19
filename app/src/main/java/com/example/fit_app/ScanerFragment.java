@@ -90,7 +90,7 @@ public class ScanerFragment extends Fragment {
                             binding.scantxt.setText(name);
                             getParentFragmentManager().
                                     beginTransaction().
-                                    replace(R.id.container, new HomeSc())
+                                    replace(R.id.container, new ProductInfo())
                                     .commit();
                         }
                     });

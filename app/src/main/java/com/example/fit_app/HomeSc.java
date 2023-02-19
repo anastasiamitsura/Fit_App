@@ -33,9 +33,10 @@ public class HomeSc extends Fragment {
         itemProduct = ItemProductBinding.inflate(getLayoutInflater());
         binding.btSc.setOnClickListener(view -> goscan());
         fillItems();
-        if(ScanerFragment.name.equals("сырок чудо") || ScanerFragment.name.equals("молоко простоквашино") || ScanerFragment.name.equals("шоколад милка")){
+        if(ProductInfo.check == 1){
             clickAddContact();
         }
+        ProductInfo.check = 0;
         return binding.getRoot();
 
     }
