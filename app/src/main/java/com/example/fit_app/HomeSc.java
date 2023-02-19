@@ -73,6 +73,7 @@ public class HomeSc extends Fragment {
 
 
     public void testid(){
+        itemProduct.imgfood.setBackgroundResource(0);
         switch (ScanerFragment.name) {
             case "сырок чудо":
                 name = "Сырок Чудо ваниль";

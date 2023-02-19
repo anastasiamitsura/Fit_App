@@ -61,6 +61,7 @@ public class ProductInfo extends Fragment {
     }
 
     public void setInfo(){
+        binding.TowarImg.setBackgroundResource(0);
         binding.TowarImg.setBackgroundResource(img);
         binding.nameti.setText(name);
         binding.moneyti.setText(money);
