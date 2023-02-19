@@ -17,26 +17,8 @@
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/ggg"
+            android:id="@+id/mishz"
             android:text = "Набор мышечной массы"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/ygl"
-            android:text = "Высокоуглеводная"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/bel"
-            android:text = "Высокобелковая"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/jir"
-            android:text = "Высокожировая"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -51,7 +33,7 @@
             android:text = "Низкобелковая"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
         <RadioButton
             android:id="@+id/lowjir"
             android:text = "Низкожировая"
@@ -71,6 +53,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/gg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
 
 

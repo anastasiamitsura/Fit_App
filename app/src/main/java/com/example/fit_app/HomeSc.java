@@ -1,5 +1,6 @@
 package com.example.fit_app;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ public class HomeSc extends Fragment {
     String name;
     String money;
     int img;
+    int color;
 
     @Nullable
     @Override
@@ -52,6 +54,7 @@ public class HomeSc extends Fragment {
         itemProduct.nametow.setText(product.getName());
         itemProduct.moneytow.setText(product.getMoney());
         itemProduct.imgfood.setBackgroundResource(product.getPict());
+        itemProduct.back.setBackgroundColor(product.getColor());
         itemProduct.getRoot().setOnClickListener(view -> product.onClick(binding.getRoot()));
         binding.container.addView(itemProduct.getRoot());
     }
@@ -64,7 +67,7 @@ public class HomeSc extends Fragment {
     }
     private void clickAddContact() {
         testid();
-        repo.addProduct(name, money, img);
+        repo.addProduct(name, money, img, color);
         fillItems();
     }
 
@@ -75,16 +78,22 @@ public class HomeSc extends Fragment {
                 name = "Сырок Чудо ваниль";
                 money = "40 руб";
                 img = R.drawable.chudo;
+                if (!ProductInfo.sirokdiet.contains(SettingFr.diet)) color = R.color.redl;
+                else color = 0;
                 break;
             case "молоко простоквашино":
                 name = "Молоко простоквашино";
                 money = "75 руб";
                 img = R.drawable.milk;
+                if (!ProductInfo.milkdiet.contains(SettingFr.diet)) color = R.color.redl;
+                else color = 0;
                 break;
             case "шоколад милка":
                 name = "Шоколад \"Милка\"";
                 money = "192 руб";
                 img = R.drawable.milka;
+                if (!ProductInfo.chololadediet.contains(SettingFr.diet)) color = R.color.redl;
+                else color = 0;
                 break;
         }
     }

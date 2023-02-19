@@ -1,17 +1,19 @@
 package com.example.fit_app;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
 import android.view.View;
 
 public abstract class Product implements Item{
     private String name;
     private String money;
     private int pict;
+    private int color;
 
-    public Product(String name, String money, int pict) {
+    public Product(String name, String money, int pict, int color) {
         this.name = name;
         this.money = money;
         this.pict = pict;
+        this.color = color;
     }
 
     public String getName() {
@@ -24,6 +26,9 @@ public abstract class Product implements Item{
 
     public int getPict() {
         return pict;
+    }
+    public int getColor() {
+        return color;
     }
 
     public abstract void onClick(View rootView);

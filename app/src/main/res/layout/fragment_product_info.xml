@@ -51,6 +51,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:text="Подходит под диету:"
+                    android:layout_margin="10dp"/>
+
+                <CheckBox
+                    android:id="@+id/okeyy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:clickable="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:text="Цена:"
                     android:layout_margin="10dp"/>
 
@@ -239,8 +262,6 @@
                     android:text="Не сохранять"/>
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>

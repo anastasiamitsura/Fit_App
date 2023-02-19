@@ -1,13 +1,15 @@
 package com.example.fit_app;
 
+import android.graphics.Color;
+
 import java.util.Arrays;
 
 public class ProductsRepository {
     private static Item[] products = new Item[0];
 
-    public void addProduct(String name, String money, int pick) {
+    public void addProduct(String name, String money, int pick, int color) {
         Product newProduct;
-        newProduct = new ProductsClickView(name, money, pick);
+        newProduct = new ProductsClickView(name, money, pick, color);
         addItem(newProduct);
     }
 

@@ -25,7 +25,11 @@ public class ProductInfo extends Fragment {
     String ugl;
     String sostaw;
     int img;
+    boolean dieet;
     String goden;
+    public final static String milkdiet = "013652";
+    public final static String sirokdiet = "0";
+    public final static String chololadediet = "0";
     public static int check = 0;
 
 
@@ -71,6 +75,7 @@ public class ProductInfo extends Fragment {
     public void testid(){
         switch (ScanerFragment.name) {
             case "сырок чудо":
+                if(sirokdiet.contains(SettingFr.diet)) binding.okeyy.setChecked(true);
                 name = "Сырок Чудо ваниль";
                 money = "40 руб";
                 img = R.drawable.chudo;
@@ -82,6 +87,7 @@ public class ProductInfo extends Fragment {
                 sostaw = "Творожная основа творог, масло сливочное, сахар, загуститель – E1414, стабилизатор - альгинат натрия, ароматизатор Ваниль, консервант-сорбат калия, глазурь сахар, какао-порошок, заменитель масла какао, заменитель молочного жира растительные масла, эмульгатор моно- и диглицериды жирных кислот, антиокислитель – E306, краситель – каротины, эмульгатор 0 соевый лецитин, ароматизатор";
                 break;
             case "молоко простоквашино":
+                if(milkdiet.contains(SettingFr.diet)) binding.okeyy.setChecked(true);
                 name = "Молоко простоквашино";
                 money = "75 руб";
                 img = R.drawable.milk;
@@ -93,6 +99,7 @@ public class ProductInfo extends Fragment {
                 sostaw = "цельное молоко, молоко нормализованное";
                 break;
             case "шоколад милка":
+                if(chololadediet.contains(SettingFr.diet)) binding.okeyy.setChecked(true);
                 name = "Шоколад \"Милка\"";
                 money = "192 руб";
                 img = R.drawable.milka;
