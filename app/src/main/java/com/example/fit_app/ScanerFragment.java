@@ -84,17 +84,14 @@ public class ScanerFragment extends Fragment {
                 SparseArray<Barcode> qrCodes = detections.getDetectedItems();
 
                 if(qrCodes.size() != 0){
-                    binding.scantxt.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            name = qrCodes.valueAt(0).displayValue;
-                            if(name.equals("шоколад милка") || name.equals("молоко простоквашино") || name.equals("сырок чудо")){
-                                binding.scantxt.setText(name);
-                                getParentFragmentManager().
-                                        beginTransaction().
-                                        replace(R.id.container, new HomeSc())
-                                        .commit();
-                            }
+                    binding.scantxt.post(() -> {
+                        name = qrCodes.valueAt(0).displayValue;
+                        if(name.equals("шоколад милка") || name.equals("молоко простоквашино") || name.equals("сырок чудо")){
+                            binding.scantxt.setText(name);
+                            getParentFragmentManager().
+                                    beginTransaction().
+                                    replace(R.id.container, new HomeSc())
+                                    .commit();
                         }
                     });
                 }

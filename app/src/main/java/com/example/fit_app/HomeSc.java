@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +16,7 @@ import com.example.fit_app.databinding.ItemProductBinding;
 import java.util.Arrays;
 
 public class HomeSc extends Fragment {
-    private static Product[] products = new Product[0];
+    private final ProductsRepository repo = new ProductsRepository();
     private FragmentHomeScBinding binding;
     private ItemProductBinding itemProduct;
     String name;
@@ -31,11 +32,27 @@ public class HomeSc extends Fragment {
         binding = FragmentHomeScBinding.inflate(inflater, container, false);
         itemProduct = ItemProductBinding.inflate(getLayoutInflater());
         binding.btSc.setOnClickListener(view -> goscan());
+        fillItems();
         if(ScanerFragment.name.equals("сырок чудо") || ScanerFragment.name.equals("молоко простоквашино") || ScanerFragment.name.equals("шоколад милка")){
-            createItem();
+            clickAddContact();
         }
         return binding.getRoot();
 
+    }
+
+    private void fillItems() {
+        binding.container.removeAllViews();
+        for (Item item : repo.getContacts()) {
+            createItem((Product) item);
+        }
+    }
+    private void createItem(Product product) {
+        itemProduct = ItemProductBinding.inflate(getLayoutInflater());
+        itemProduct.nametow.setText(product.getName());
+        itemProduct.moneytow.setText(product.getMoney());
+        itemProduct.imgfood.setBackgroundResource(product.getPict());
+        itemProduct.getRoot().setOnClickListener(view -> product.onClick(binding.getRoot()));
+        binding.container.addView(itemProduct.getRoot());
     }
 
     public void goscan(){
@@ -44,31 +61,30 @@ public class HomeSc extends Fragment {
                 replace(R.id.container, new ScanerFragment())
                 .commit();
     }
-
-    public void createItem(){
+    private void clickAddContact() {
         testid();
-        itemProduct.nametow.setText(this.name);
-        itemProduct.moneytow.setText(this.money);
-        itemProduct.imgfood.setBackgroundResource(img);
-        binding.container.addView(itemProduct.getRoot());
+        repo.addProduct(name, money, img);
+        fillItems();
     }
 
 
     public void testid(){
-        if(ScanerFragment.name.equals("сырок чудо")){
-            name = "Сырок Чудо ваниль";
-            money = "40 руб";
-            img = R.drawable.chudo;
-        }
-        else if(ScanerFragment.name.equals("молоко простоквашино")){
-            name = "Молоко простоквашино";
-            money = "75 руб";
-            img = R.drawable.milk;
-        }
-        else if(ScanerFragment.name.equals("шоколад милка")){
-            name = "Шоколад молочный \"Милка\"";
-            money = "192 руб";
-            img = R.drawable.milka;
+        switch (ScanerFragment.name) {
+            case "сырок чудо":
+                name = "Сырок Чудо ваниль";
+                money = "40 руб";
+                img = R.drawable.chudo;
+                break;
+            case "молоко простоквашино":
+                name = "Молоко простоквашино";
+                money = "75 руб";
+                img = R.drawable.milk;
+                break;
+            case "шоколад милка":
+                name = "Шоколад \"Милка\"";
+                money = "192 руб";
+                img = R.drawable.milka;
+                break;
         }
     }
 }

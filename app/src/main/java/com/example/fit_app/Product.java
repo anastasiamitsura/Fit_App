@@ -1,8 +1,9 @@
 package com.example.fit_app;
 
 import android.graphics.drawable.Drawable;
+import android.view.View;
 
-public class Product {
+public abstract class Product implements Item{
     private String name;
     private String money;
     private int pict;
@@ -24,4 +25,6 @@ public class Product {
     public int getPict() {
         return pict;
     }
+
+    public abstract void onClick(View rootView);
 }
