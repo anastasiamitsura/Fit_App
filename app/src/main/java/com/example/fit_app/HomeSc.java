@@ -1,5 +1,8 @@
 package com.example.fit_app;
 
+import static com.example.fit_app.ProductInfo.podhodit;
+import static com.example.fit_app.SettingFr.ogrr;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -79,21 +82,21 @@ public class HomeSc extends Fragment {
                 name = "Сырок Чудо ваниль";
                 money = "40 руб";
                 img = R.drawable.chudo;
-                if (!ProductInfo.sirokdiet.contains(SettingFr.diet)) color = R.color.redl;
+                if (!podhodit) color = Color.RED;
                 else color = 0;
                 break;
             case "молоко простоквашино":
                 name = "Молоко простоквашино";
                 money = "75 руб";
                 img = R.drawable.milk;
-                if (!ProductInfo.milkdiet.contains(SettingFr.diet)) color = R.color.redl;
+                if (!podhodit) color = Color.RED;
                 else color = 0;
                 break;
             case "шоколад милка":
                 name = "Шоколад \"Милка\"";
                 money = "192 руб";
                 img = R.drawable.milka;
-                if (!ProductInfo.chololadediet.contains(SettingFr.diet)) color = R.color.redl;
+                if (!podhodit) color = Color.RED;
                 else color = 0;
                 break;
         }

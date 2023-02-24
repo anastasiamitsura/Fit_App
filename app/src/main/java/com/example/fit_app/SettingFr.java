@@ -1,5 +1,7 @@
 package com.example.fit_app;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +16,7 @@ import com.example.fit_app.databinding.FragmentSettingBinding;
 
 public class SettingFr extends Fragment {
     private FragmentSettingBinding binding;
-    public static String diet = "0";
+    public static int ogrr = 0;
 
     @Nullable
     @Override
@@ -23,25 +25,46 @@ public class SettingFr extends Fragment {
                              @Nullable Bundle savedInstanceState
     ) {
         binding = FragmentSettingBinding.inflate(inflater, container, false);
-        binding.mishz.setOnClickListener(view -> {
-            diet = "1";
+        isTruee();
+        binding.healthbt.setOnClickListener(view -> {
+            ogrr = ogrr % 10 + 10;
+            getParentFragmentManager().
+                    beginTransaction().
+                    replace(R.id.container, new HealthFr())
+                    .commit();
         });
-        binding.lowygl.setOnClickListener(view -> {
-            diet = "2";
+        binding.sportbt.setOnClickListener(view -> {
+            ogrr = ogrr % 10 + 20;
+            getParentFragmentManager().
+                    beginTransaction().
+                    replace(R.id.container, new SportFr())
+                    .commit();
         });
-        binding.lowbel.setOnClickListener(view -> {
-            diet = "3";
-        });
-        binding.lowjir.setOnClickListener(view -> {
-            diet = "4";
-        });
-        binding.balansed.setOnClickListener(view -> {
-            diet = "5";
-        });
-        binding.lowkk.setOnClickListener(view -> {
-            diet = "6";
+        binding.kidsbt.setOnClickListener(view -> {
+            ogrr = ogrr % 10 + 30;
+            getParentFragmentManager().
+                    beginTransaction().
+                    replace(R.id.container, new KidsBt())
+                    .commit();
         });
         return binding.getRoot();
+    }
 
+    public void isTruee(){
+        if(ogrr < 20 && ogrr > 9){
+            binding.healthbt.setBackgroundColor(Color.GREEN);
+            binding.sportbt.setBackgroundColor(Color.GRAY);
+            binding.kidsbt.setBackgroundColor(Color.GRAY);
+        }
+        else if(ogrr < 30 && ogrr > 19){
+            binding.healthbt.setBackgroundColor(Color.GRAY);
+            binding.sportbt.setBackgroundColor(Color.GREEN);
+            binding.kidsbt.setBackgroundColor(Color.GRAY);
+        }
+        else if(ogrr > 29){
+            binding.healthbt.setBackgroundColor(Color.GRAY);
+            binding.sportbt.setBackgroundColor(Color.GRAY);
+            binding.kidsbt.setBackgroundColor(Color.GREEN);
+        }
     }
 }

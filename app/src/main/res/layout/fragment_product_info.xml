@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bgg"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -34,7 +35,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="?attr/windowBackground">
 
         <LinearLayout
@@ -74,134 +75,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:text="Цена:"
-                    android:layout_margin="10dp"/>
-
-                <TextView
-                    android:id="@+id/moneyti"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="10dp"
-                    android:text="... руб"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:text="Энергетитческая ценность на 100 грамм:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20dp" />
-
-            <LinearLayout
-                android:layout_marginStart="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="- Каллорийность:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-                <TextView
-                    android:id="@+id/kall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="... калл"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginStart="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="- Белки:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-                <TextView
-                    android:id="@+id/belk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="... грамм"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginStart="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="- Жиры:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-                <TextView
-                    android:id="@+id/jir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="... грамм"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginStart="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="- Углеводы:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-                <TextView
-                    android:id="@+id/ugl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="2dp"
-                    android:text="... грамм"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:text="Срок годности:"
                     android:layout_marginHorizontal="10dp"/>
 
@@ -215,10 +88,145 @@
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Энергетитческая ценность на 100 грамм:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/openenerg"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end|center"
+                    android:background="@drawable/down"/>
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/energ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="- Каллорийность:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                    <TextView
+                        android:id="@+id/kall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="... калл"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="- Белки:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                    <TextView
+                        android:id="@+id/belk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="... грамм"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="- Жиры:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                    <TextView
+                        android:id="@+id/jir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="... грамм"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="- Углеводы:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                    <TextView
+                        android:id="@+id/ugl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:text="... грамм"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -227,15 +235,26 @@
                     android:text="Состав:"
                     android:layout_marginHorizontal="10dp"/>
 
-                <TextView
-                    android:id="@+id/sostaw"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:text="..."
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+                <ImageView
+                    android:id="@+id/opensostaw"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/down"/>
 
-            </LinearLayout>
+
+
+            </FrameLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/sostaw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text="..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

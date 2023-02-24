@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HealthFr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/deskbig"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="?gray">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="?windowBackground"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:text="Описание"/>
+                    <ImageView
+                        android:id="@+id/openbt"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center|end"
+                        android:background="@drawable/down"/>
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/textopis"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:text="Следующие добавки не следует использовать в детском питании:\n- Е102 (Тартразин), \n-E110 (Закатно-желтый), \n- E124 (Понсо 4R), \n-E129 (Allura Red AC), \n-E133 (синий 1) и \n-Е211 (бензоат натрия)."
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ограничения:"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp">
+
+            <RadioButton
+                android:id="@+id/ots"
+                android:text="Нет ограничений"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/zelic"
+                    android:text="Целиакия"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/zelbt"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center|end"
+                    android:background="@drawable/down"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/zelop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Людям с этим заболеванием не разрешается употреблять глютен в пищу."
+                android:layout_marginHorizontal="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/lact"
+                    android:text="Непереносимость лактозы"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/lactbt"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center|end"
+                    android:background="@drawable/down"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/lacttx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Людям с этим заболеванием следует избегать лактозы, разновидности сахара, содержащегося в молоке и других молочных продуктах."
+                android:layout_marginHorizontal="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/orech"
+                    android:text="Аллергия на орехи"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/orechbt"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center|end"
+                    android:background="@drawable/down"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/orechtx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Люди с аллергией на орехи должны избегать любых видов орехов, включая арахис, миндаль, грецкие орехи, кешью, макадамию и другие."
+                android:layout_marginHorizontal="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/morepr"
+                    android:text="Аллергия на морепродукты"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/moreprbt"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center|end"
+                    android:background="@drawable/down"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/moreprtx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Людям с этой аллергией следует избегать морепродуктов, таких как рыба, ракообразные и моллюски."
+                android:layout_marginHorizontal="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/soy"
+                    android:text="Аллергия на сою"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/soybt"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center|end"
+                    android:background="@drawable/down"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/soytx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Люди с аллергией на сою должны избегать любых продуктов, содержащих соевые бобы или полученных из них, таких как эдамаме, тофу, темпе, соевый соус и паста мисо"
+                android:layout_marginHorizontal="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -18,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
+
     private ActivityMainBinding binding;
 
     @Override
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.profilebt:
                 getSupportFragmentManager().
                         beginTransaction().
-                        replace(R.id.container, new ProfileFr())
+                        replace(R.id.container, new HealthFr())
                         .commit();
                 return true;
             default:

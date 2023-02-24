@@ -14,5 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="windowBackground">#DCDCDC</item>
         <item name="red">#AE0000</item>
+        <item name="gray">#AAAAAA</item>
+        <item name="green">#3AA526</item>
     </style>
 </resources>
